@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+}
+
+#display {
+  background: #000;
+  width: 100vw;
+  height: 100vh;
+}
+
+#UI {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#UI {
+  color: #fff;
+  line-height: 1.2;
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.5rem;
+}
+
+.ping,
+.bar {
+  position: absolute;
+  background: #fff;
+  display: block;
+}
