@@ -1,6 +1,3 @@
-<p align='center'>
-  <img align='left' src='https://opengraph.githubassets.com/2301293821398129381209381/HugoRodriguesQW/neuron' width='50%'></img>
-</p>
 
 # neuron 🧠
 
