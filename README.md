@@ -1,4 +1,4 @@
-[<img align="right" src="https://opengraph.githubassets.com/2301293821398129381209381/HugoRodriguesQW/neuron" width="55%" />](https://github.com/hugorodriguesqw/neuron)
+[<img align="right" src="https://opengraph.githubassets.com/2301293821398129381209381/HugoRodriguesQW/neuron" width="40%" />](https://github.com/hugorodriguesqw/neuron)
 
 <p align='left'>
 <p align='top'>
