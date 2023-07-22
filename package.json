@@ -1,0 +1,28 @@
+{
+  "name": "neuron",
+  "version": "0.2.0",
+  "description": "A feedforward neural network that can learn some simple tasks enveloped to be easily used and facilitate the evolution of generations.",
+  "main": "brain.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HugoRodriguesQW/neuron.git"
+  },
+  "keywords": [
+    "machine-learning",
+    "neural-network",
+    "ia",
+    "deep-learning"
+  ],
+  "author": "HugoRodriguesQW",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HugoRodriguesQW/neuron/issues"
+  },
+  "homepage": "https://github.com/HugoRodriguesQW/neuron#readme"
+}

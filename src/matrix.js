@@ -1,132 +1,140 @@
-class Matrix {
+export class Matrix {
   // rows (length), cols (length)
   constructor(rows, cols) {
-    this.rows = rows
-    this.cols = cols
-    this.data = []
+    this.rows = rows;
+    this.cols = cols;
+    this.data = [];
 
     for (let i = 0; i < rows; i++) {
-      let arr = []
+      let arr = [];
       for (let j = 0; j < cols; j++) {
-        arr.push(0) // TEMP: change later
+        arr.push(0); // TEMP: change later
       }
 
-      this.data.push(arr)
+      this.data.push(arr);
     }
   }
 
   print(name) {
-    console.group(name)
-    console.table(this.data)
-    console.groupEnd(name)
+    console.group(name);
+    console.table(this.data);
+    console.groupEnd(name);
   }
 
   map(func) {
     this.data = this.data.map((arr, r) => {
       return arr.map((num, c) => {
-        return func(num, r, c)
-      })
-    })
+        return func(num, r, c);
+      });
+    });
 
-    return this
+    return this;
   }
 
   randomize() {
     this.map((elem, r, c) => {
-      return Math.random() * 2 - 1 // -1 to 1
-    })
+      return Math.random() * Math.sqrt(2 / (this.rows + this.cols)); // Xavier initialization
+    });
   }
 
   static map(ref, func) {
-    let matrix = new Matrix(ref.rows, ref.cols)
+    let matrix = new Matrix(ref.rows, ref.cols);
     matrix.data = ref.data.map((arr, r) => {
       return arr.map((num, c) => {
-        return func(num, r, c)
-      })
-    })
+        return func(num, r, c);
+      });
+    });
 
-    return matrix
+    return matrix;
+  }
+
+  static flat(matrix) {
+    return matrix.flat();
   }
 
   static matrixToArray(matrix) {
-    let arr = []
+    let arr = [];
     matrix.map((elm, r, c) => {
-      arr.push(elm)
-    })
+      arr.push(elm);
+    });
 
-    return arr
+    return arr;
   }
 
   static arrayToMatrix(arr) {
-    let matrix = new Matrix(arr.length, 1)
+    let matrix = new Matrix(arr.length, 1);
     matrix.map((_, r) => {
-      return arr[r]
-    })
-    return matrix
+      return arr[r];
+    });
+    return matrix;
   }
 
   static add(A, B) {
-    var matrix = new Matrix(A.rows, A.cols)
+    var matrix = new Matrix(A.rows, A.cols);
 
     matrix.map((num, i, j) => {
-      return A.data[i][j] + B.data[i][j]
-    })
+      return A.data[i][j] + B.data[i][j];
+    });
 
-    return matrix
+    return matrix;
   }
 
   static minus(A, B) {
-    var matrix = new Matrix(A.rows, A.cols)
+    var matrix = new Matrix(A.rows, A.cols);
 
     matrix.map((num, i, j) => {
-      return A.data[i][j] - B.data[i][j]
-    })
+      return A.data[i][j] - B.data[i][j];
+    });
 
-    return matrix
+    return matrix;
   }
 
   static times(A, B) {
-    var matrix = new Matrix(A.rows, B.cols)
+    var matrix = new Matrix(A.rows, B.cols);
 
     matrix.map((num, i, j) => {
-      let sum = 0
+      let sum = 0;
       for (let k = 0; k < A.cols; k++) {
-        let elm1 = A.data[i][k]
-        let elm2 = B.data[k][j]
-        sum += elm1 * elm2
+        let elm1 = A.data[i][k];
+        let elm2 = B.data[k][j];
+        sum += elm1 * elm2;
       }
 
-      return sum
-    })
+      return sum;
+    });
 
-    return matrix
+    return matrix;
   }
 
   static hadamard(A, B) {
-    var matrix = new Matrix(A.rows, A.cols)
+    var matrix = new Matrix(A.rows, A.cols);
 
     matrix.map((num, i, j) => {
-      return A.data[i][j] * B.data[i][j]
-    })
+      return A.data[i][j] * B.data[i][j];
+    });
 
-    return matrix
+    return matrix;
   }
 
   static scalarTimes(A, scalar) {
-    var matrix = new Matrix(A.rows, A.cols)
+    var matrix = new Matrix(A.rows, A.cols);
 
     matrix.map((num, i, j) => {
-      return A.data[i][j] * scalar
-    })
+      return A.data[i][j] * scalar;
+    });
 
-    return matrix
+    return matrix;
   }
 
   static transpose(A) {
-    var matrix = new Matrix(A.cols, A.rows)
+    var matrix = new Matrix(A.cols, A.rows);
     matrix.map((num, i, j) => {
-      return A.data[j][i]
-    })
-    return matrix
+      return A.data[j][i];
+    });
+    return matrix;
   }
+}
+
+if (window) {
+  Object.assign(window, { Matrix });
 }

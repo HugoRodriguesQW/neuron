@@ -1,15 +1,126 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IA - DEMO</title>
-    <link href="/style.css" rel="stylesheet" />
-    <script src="/modules/p5.min.js"></script>
+    <title>Neuron playground</title>
+    <link
+      href="/style.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        font-size: 10px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Sans Unicode";
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;
+        min-height: 50vh;
+        gap: 7rem;
+        background: #a4e5ff;
+        font-size: 1.6rem;
+      }
+
+      body > * {
+        max-width: 800px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+      }
+
+      ol {
+        font-size: 2.3rem;
+        background: white;
+        padding: 3rem;
+        border-radius: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+        min-width: 40rem;
+      }
+
+      ol * {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        color: blueviolet;
+        font-weight: bold;
+        list-style: none;
+        line-height: 1;
+      }
+
+      ol li > span {
+        color: gold;
+        background: #f1f2f3;
+        padding: 0.2rem 0.8rem;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        border-radius: 0.4rem;
+      }
+
+      p {
+        line-height: 2;
+      }
+
+      code {
+        background: #f1f2f3;
+        padding: 0.4rem;
+        border-radius: 0.5rem;
+      }
+
+      dcrp {
+        color: #9b9b9b;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 1.3rem;
+      }
+
+      a {
+        text-decoration: underline;
+        color: blueviolet;
+      }
+    </style>
   </head>
 
-  <body></body>
+  <body>
+    <h1>Added the following items to a browser window:</h1>
 
-  <script src="/src/schema.js"></script>
-  <script src="/src/brain.js"></script>
-  <script src="/src/matrix.js"></script>
-  <script src="/src/sketch.js"></script>
+    <ol>
+      <li>.NeuralNetwork <dcrp>neuron</dcrp><span>class</span></li>
+      <li>.Matrix <dcrp>matrix array</dcrp><span>class</span></li>
+      <li>.Activation <dcrp>activation functions</dcrp> <span>class</span></li>
+      <li>.Examples <dcrp>demo examples</dcrp> <span>object</span></li>
+      <li>.Util <dcrp>some utilities</dcrp><span>class</span></li>
+    </ol>
+
+    <p>
+      Open the browser console and use <code>NeuralNetwork</code> to create a
+      new neural network or use the examples with <code>examples</code>. See the
+      documentation for
+      <a href="https://github.com/HugoRodriguesQW/neuron">more details</a>.
+    </p>
+
+    <div id="console-container"></div>
+  </body>
+
+  <script
+    type="module"
+    src="/examples/examples.js"
+  ></script>
+
+  <script
+    type="module"
+    src="/src/brain.js"
+  ></script>
 </html>
