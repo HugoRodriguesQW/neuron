@@ -29,6 +29,18 @@ neural.train(input, expected)
 neural.predict(input) 
 ```
 
+#### Matrix
+For now matrix input is not supported, but you can try converting it to array using Matrix.flat:
+```js
+Matrix.flat([ // Digit 7
+        [0, 1, 1, 1, 1],
+        [0, 0, 0, 0, 1],
+        [0, 0, 0, 1, 0],
+        [0, 0, 1, 0, 0],
+        [0, 1, 0, 0, 0],
+]), // output: [0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0]
+```
+
 #### Run Examples
 Run the network setup below and start your workout: (relu or sigmoid for now)
 ```js
